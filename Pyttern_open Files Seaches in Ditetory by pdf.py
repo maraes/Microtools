@@ -48,7 +48,7 @@ while True:
 		if choose == -1:
 			continue
 		else:
-			os.system(f'{list_files[choose]}')
+			os.system(f'"{list_files[choose]}"')
 				
 			
 	
