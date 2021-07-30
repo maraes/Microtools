@@ -21,7 +21,13 @@ while True:
 		os.chdir('.')
 	
 	print(f'\nPesquisando em Atual: {os.getcwd()}\n\n')
-	pattern = input('Input term searches: ')
+	
+	print('\n'.join(os.listdir()))
+	
+	pattern = input('\n\nInput term searches: ')
+	
+	
+	
 	for file in os.listdir():
 		if file.endswith('.pdf'):
 			if semAcentos(pattern.lower()) in semAcentos(file.lower()):
