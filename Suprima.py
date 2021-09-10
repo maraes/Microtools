@@ -1,15 +1,21 @@
+import sys
 import os
 import shutil
 
-
-
-os.chdir('C:\Livros')
-i = 0
-for root , dirs , files in os.walk('.'):
+d= input('input diretorio: ')
+tipo = ''
+suprima = ''
+try:
+	os.chdir(d)
+except:
+	sys.exit()
+	i = 0
+for contents in os.listdir():
 	
-	for file in files:
-		if file.endswith('.pdf'):
-			if  '- Desconhecido' in file:
+	if os.path.isfile(contents):
+		file = contents
+		if file.endswith(tipo):
+			if  suprima in file:
 				cont+=1
 				file , ex = os.path.splitext(file)
 				arq = file[:-len(' - Desconhecido')]
